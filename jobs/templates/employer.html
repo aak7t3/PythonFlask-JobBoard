@@ -3,7 +3,9 @@
 {% block content %}
 <div>
 <h1>{{ employer['name'] }}</h1>
-<div class="description"><p>{ employer['description'] }}</p></div>
+<div class="description">
+  <p>{ employer['description'] }}</p>
+</div>
 </div>
   <h2>Jobs</h2>
   {{show_jobs(jobs) }}
@@ -19,6 +21,9 @@
         <span class="fa fa-star checked"></span>
         {% endfor %}
         <div class="media-left">
+          {% for _ in range (0,review['rating']) %}
+          <span calss ="fa fa-star checked"></span>
+          {% endfor %}
         </div>
         <div class="media-content">
           <div class="content">
